@@ -14,7 +14,7 @@ func (stack *Stack) Pop() (value interface{}) {
 	if stack.size > 0 {
 		value, stack.top = stack.top.data, stack.top.next
 		stack.size--
-		return
+		return value
 	}
 	return nil
 }

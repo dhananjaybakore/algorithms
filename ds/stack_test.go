@@ -14,6 +14,10 @@ func TestPushAndPeekOperation(t *testing.T) {
 	if ele != 5 && !stack.IsEmpty() {
 		t.Errorf("elements not inserted properly to the stack, top ele should be:5 but got %v", ele)
 	}
+	if stack.size != 4 {
+		t.Errorf("stack size should have been 4")
+	}
+
 }
 
 func TestPopOperation(t *testing.T) {
