@@ -1,8 +1,8 @@
 package controllers
 
 import (
+	"algorithms/ks/webservice/models"
 	"encoding/json"
-	"goKitchenSink/webservice/models"
 	"net/http"
 	"regexp"
 	"strconv"

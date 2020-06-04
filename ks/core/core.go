@@ -24,7 +24,7 @@ func BasicVariableDeclaration() {
 }
 
 func PointersDeclaration() {
-	var firstName *string = new(string)
+	firstName := new(string)
 	*firstName = "John"
 	//Print value at address
 	fmt.Printf("Var Address: %v Var Value: %v", &firstName, *firstName)
@@ -38,15 +38,15 @@ func PointersDeclaration2() {
 	fmt.Println(ptr, *ptr)
 }
 
-const (
-	first = iota
-	second
-)
+//const (
+//	first = iota
+//	second
+//)
 
-const (
-	third = iota
-	fourth
-)
+//const (
+//	third = iota
+//	fourth
+//)
 
 func UsingConstants() {
 	const c = 3
@@ -157,15 +157,6 @@ func LoopOverCollection() {
 	for k, v := range wellKnownPorts {
 		println(k, v)
 	}
-}
-
-func PanicExample() {
-	println("Starting web server")
-
-	// do important things
-	panic("Something bad just happened")
-
-	println("Web server started")
 }
 
 type User struct {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"goKitchenSink/webservice/controllers"
+	"algorithms/ks/webservice/controllers"
 	"net/http"
 )
 
