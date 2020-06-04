@@ -9,18 +9,23 @@ type Queue struct {
 	size int
 }
 
-func (queue *Queue) pop() (value interface{}) {
-	if queue.size > 0 {
+func (queue *Queue) pop() (value interface{}, err error) {
+	if queue.top != nil {
 		value, queue.top = queue.top.data, queue.top.next
 		queue.size--
-		return value
+		return value, nil
 	}
-	return nil
+	return nil, fmt.Errorf("queue is empty")
 }
 
 func (queue *Queue) Push(item interface{}) {
 	last := &Node{item, nil}
-	queue.last.next = last
+	if queue.last != nil {
+		queue.last.next = last
+	}
+	if queue.top == nil {
+		queue.top = last
+	}
 	queue.last = last
 	queue.size++
 }
